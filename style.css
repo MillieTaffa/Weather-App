@@ -23,4 +23,81 @@ body{
   background-image: url(src/pexels-jplenio-1118873.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0 auto;
+  padding: 10%;
+}
+
+/*Cointainer styling*/
+.main-content{
+font-family: Bona Nova;
+margin: 0 auto;
+background-color: rgba(255, 255, 255, 0.309);
+padding: 20px 30px;
+border-radius: 20px;
+max-width: 600px;
+color: rgb(2, 2, 24);
+}
+
+/*Search-Panel Styling*/
+.search-input, .search-output{
+  padding: 5px 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid ;
+}
+.search-input{
+  width: 80%;
+}
+.search-output{
+  transition: all ease 200ms;
+  cursor: pointer;
+}
+.search-output:hover{
+  background: darkblue;
+  color: white;
+  border: transparent;
+}
+
+/*Page Content styling*/
+
+.weather-content{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 40px;
+}
+li{
+  margin: 0 auto;
+}
+.weather-info{
+  font-size: 16px;
+  text-align: center;
+  justify-content: stretch;
+}
+.footer{
+  text-align: center;
+
+}
+a{
+  text-decoration: none;
+  font-size: 15px;
+  color: turquoise
+}
+sub{
+  color: rgba(0, 0, 0, 0.409);
+}
+b{
+  color: darkslategray;
+}
+
+.warmDay{
+  background-image: url(src/sun_495976-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.coldDay{
+  background-image: url(src/sky_16227679-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

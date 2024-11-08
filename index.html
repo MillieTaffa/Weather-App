@@ -23,26 +23,33 @@
         </h1>
         <hr>
         <!--Search Panel-->
-        <section>
-            <input type="search" name="search-input" id="search-input">
-            <input type="button" value="Search" id="search-output">
-        </section>
+        <form class="search-panel" id="search-panel">
+            <input type="search" class="search-input" id="search-input" placeholder="Enter a city">
+            <input type="submit" class="search-output" value="Search" id="search-output">
+        </form>
         <!--Page Content-->
         <ul class="weather-content">
-            <li class="location" id="location">Krugersdoorp</li>
-            <li class="temperature" id="temp"><img src="src/cloud_14407549-removebg-preview.png" width="20px"> 20°</li>
+            <li class="location" id="location">Krugersdorp</li>
+            <li class="temperature" id="temp"><img src="src/cloud_14407549-removebg-preview.png" width="20px"> 20°C</li>
         </ul>
         <!--Weather Stats-->
-        <p>
+        <p class="weather-info" id="weather-info">
             Friday 10:01, scattered clouds | Humidity:<b>83%</b> |Windspeed:<b>5km/h</b>
-        </p>
+        </p> <hr>
         <!--Footer Section-->
         <p class="footer">Coded by 
             <a href="#"> Millie Taffa</a> 
             hosted on 
             <a href="#">GitHub</a> and
              <a href="#">Netlify</a><br>
-             <sub>The units on this site are metric</sub>
+             <sub>
+                The units on this site are metric <br>
+                Credits for the images used go to <br>
+                <a href="https://www.freepik.com/">Freepik</a><br>
+                <a href="https://www.flaticon.com/authors/konkapp">Konkapp</a><br>
+                <a href=" https://www.pexels.com/photo/island-during-golden-hour-and-upcoming-storm-1118873/">Johannes Plenio</a>
+
+             </sub>
         </p>
     </div>
 
