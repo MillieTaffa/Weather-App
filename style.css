@@ -90,14 +90,14 @@ sub{
 b{
   color: darkslategray;
 }
-
+/*Theme toggles*/
 .warmDay{
-  background-image: url(src/sun_495976-removebg-preview.png);
+  background-image: url(src/sunnyday.jpeg)
   background-repeat: no-repeat;
   background-size: cover;
 }
 .coldDay{
-  background-image: url(src/sky_16227679-removebg-preview.png);
+  background-image: url(src/cloudyday.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }
