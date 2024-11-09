@@ -84,8 +84,11 @@ li{
   width: fit-content;
 
 }
-img{
+.weather-app-icon{
   width: 35px;
+}
+.logo{
+  text-align: center;
 }
 a{
   text-decoration: none;
