@@ -57,6 +57,30 @@ function returnResult(event) {
     searchCity(searchInput.value)
 }
 
-
 let searchFormat = document.querySelector("#search-panel");
 searchFormat.addEventListener("submit", returnResult)
+
+//Individual day forecast
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+    let days = ["Tues", "Wed", "Thursday", "Friday", "Saturday"];
+    let forecastHtml = "";
+
+    days.forEach(function (day) {
+        forecastHtml =forecastHtml+ `
+            <div class="weather-forecast-day">
+                <div class="weather-forecast-date">${day}</div> 
+                <div class="weather-forecast-icon">⛅</div> 
+                <div class="weather-forecast-temperature">
+                    <div class="weather-forecast-temp"><b>15°</b></div> 
+                    <div class="weather-forecast-temp">9°</div> 
+                </div> 
+            </div>
+        `;
+    });
+
+    forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();

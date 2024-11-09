@@ -70,6 +70,9 @@ color: rgb(2, 2, 24);
 li{
   margin: 0 auto;
 }
+.location{
+  margin-left: 0;
+}
 .weather-info{
   font-size: 16px;
   text-align: center;
@@ -113,3 +116,31 @@ b{
   background-repeat: no-repeat;
   background-size: cover;
 }
+ /*Forecast Styling*/
+
+ .weather-forecast-date{
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgb(47, 79, 80)
+ }
+ .weather-forecast-icon{
+  font-size: 30px;
+  text-align: center;
+ }
+ .weather-forecast-temperature{
+  text-align: center;
+  color: rgb(47, 79, 80);
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+ }
+ .weather-forecast-temp{
+  padding: 0 10px;
+ }
+ .weather-forecast{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  }
+
