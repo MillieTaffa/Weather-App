@@ -125,8 +125,11 @@ b{
   color: rgb(47, 79, 80)
  }
  .weather-forecast-icon{
-  font-size: 30px;
+  width: 80px;
+  height:80px;
   text-align: center;
+  display: block;
+  margin: 0 auto;
  }
  .weather-forecast-temperature{
   text-align: center;

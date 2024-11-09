@@ -64,33 +64,46 @@ searchFormat.addEventListener("submit", returnResult)
 
 //Individual day forecast
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp *1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    return days[date.getDay()];
+}
+
+
 function getForecast(city) {
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=a1f90bc0bf23da8c35fe325tob5f8845`;
     axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
-    console.log(response.data);
+    console.log(response.data); // Log the full response to inspect the structure
 
     let forecastElement = document.querySelector("#forecast");
-    let days = ["Tues", "Wed", "Thursday", "Friday", "Saturday"];
     let forecastHtml = "";
 
-    days.forEach(function (day) {
-        forecastHtml += `
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">${day}</div> 
-                <div class="weather-forecast-icon">⛅</div> 
-                <div class="weather-forecast-temperature">
-                    <div class="weather-forecast-temp"><b>15°</b></div> 
-                    <div class="weather-forecast-temp">9°</div> 
-                </div> 
-            </div>
-        `;
-    });
+    if (response.data.daily) {
+        response.data.daily.forEach(function (day, index) {
+            if (index < 5) { 
+                forecastHtml += `
+                    <div class="weather-forecast-day">
+                        <div class="weather-forecast-date">${formatDay(day.time)}</div> 
+                        <div class="weather-forecast-icon"><img src=${day.condition.icon_url} class="weather-forecast-icon"></div> 
+                        <div class="weather-forecast-temperature">
+                            <div class="weather-forecast-temp"><b>${Math.round(day.temperature.maximum)}°</b></div> 
+                            <div class="weather-forecast-temp">${Math.round(day.temperature.minimum)}°</div> 
+                        </div> 
+                    </div>
+                `;
+            }
+        });
+    } else {
+        console.log("No daily forecast data available.");
+    }
 
     forecastElement.innerHTML = forecastHtml;
 }
+
 
 getForecast()
 
