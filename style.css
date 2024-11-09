@@ -79,6 +79,14 @@ li{
   text-align: center;
 
 }
+.temperature{
+  margin: 0;
+  width: fit-content;
+
+}
+img{
+  width: 35px;
+}
 a{
   text-decoration: none;
   font-size: 15px;
@@ -92,9 +100,10 @@ b{
 }
 /*Theme toggles*/
 .warmDay{
-  background-image: url(src/sunnyday.jpeg)
+  background-image: url(src/sunnyday.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 .coldDay{
   background-image: url(src/cloudyday.jpeg);
