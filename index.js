@@ -29,6 +29,8 @@ function refreshWeather(response) {
     } else {
         iconElement.src = "src/sun-icon.png";
     }
+
+    getForecast(response.data.city)
 }
 
 function formatDate(date) {
@@ -38,7 +40,7 @@ function formatDate(date) {
     let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = weekdays[date.getDay()]
 
-    if (minutes < 0) {
+    if (minutes < 10) {
         minutes=`0${minutes}`
     }
 
@@ -62,13 +64,20 @@ searchFormat.addEventListener("submit", returnResult)
 
 //Individual day forecast
 
-function displayForecast() {
+function getForecast(city) {
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=a1f90bc0bf23da8c35fe325tob5f8845`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+    console.log(response.data);
+
     let forecastElement = document.querySelector("#forecast");
     let days = ["Tues", "Wed", "Thursday", "Friday", "Saturday"];
     let forecastHtml = "";
 
     days.forEach(function (day) {
-        forecastHtml =forecastHtml+ `
+        forecastHtml += `
             <div class="weather-forecast-day">
                 <div class="weather-forecast-date">${day}</div> 
                 <div class="weather-forecast-icon">⛅</div> 
@@ -83,4 +92,5 @@ function displayForecast() {
     forecastElement.innerHTML = forecastHtml;
 }
 
-displayForecast();
+getForecast()
+
